@@ -1,0 +1,25 @@
+<h2>Historique des employés</h2>
+<ul class="list-group">
+  <app-employe
+    *ngFor="let employe of employes"
+    [name]="employe.name"
+    [status]="employe.status"
+    [salaire]="employe.salaire"
+  >
+  </app-employe>
+</ul>
+
+<h2>Nouvel employe</h2>
+<p>Veuillez saisir votre nom</p>
+<input type="text" [(ngModel)]="name" />
+
+<p>Veuillez saisir votre statut</p>
+<input type="text" [(ngModel)]="status" />
+
+<p>Veuillez saisir votre salaire</p>
+<input type="number" [(ngModel)]="salaire" /><br />
+
+<button class="btn btn-primary" (click)="ajouter()">Ajouter</button><br /><br />
+<button class="btn btn-primary" (click)="calculer()">Calculer</button>
+
+<p>Le salaire net est : {{ salaireNet }}</p>
